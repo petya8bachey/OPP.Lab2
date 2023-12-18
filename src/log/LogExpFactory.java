@@ -50,5 +50,6 @@ public class LogExpFactory {
             case Contains -> { return expContains; }
             case NoContains -> { return expNoContains; }
         }
+        return null;
     }
 }
