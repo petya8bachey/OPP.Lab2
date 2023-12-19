@@ -1,5 +1,9 @@
 package field;
 
+import filter.FilterRule;
+import log.LogExpEnum;
+import rule.str.NameRule;
+
 public class NameField implements Field {
     String name;
     public NameField(String name) {
@@ -11,8 +15,8 @@ public class NameField implements Field {
     }
 
     @Override
-    public void createRule() {
-
+    public FilterRule createRule(Object value, LogExpEnum operation) {
+        return new NameRule((String) value, operation);
     }
 
     @Override

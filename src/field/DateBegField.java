@@ -1,5 +1,9 @@
 package field;
 
+import filter.FilterRule;
+import log.LogExpEnum;
+import rule.date.DateBegRule;
+
 import java.util.Date;
 
 public class DateBegField implements Field {
@@ -13,8 +17,8 @@ public class DateBegField implements Field {
     }
 
     @Override
-    public void createRule() {
-
+    public FilterRule createRule(Object value, LogExpEnum operation) {
+        return new DateBegRule((Date) value, operation);
     }
 
     @Override

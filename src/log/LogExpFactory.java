@@ -17,28 +17,6 @@ public class LogExpFactory {
     ILogExp expNoEQ = new ExpNoEQ();
     ILogExp expContains = new ExpContains();
     ILogExp expNoContains = new ExpNoContains();
-    LogExpEnum[] str = { EQ, NoEQ, Contains, NoContains};
-    LogExpEnum[] num = { EQ, NoEQ, GT, LT, GE, LE};
-    LogExpEnum[] date = { EQ, NoEQ, GT, LT, GE, LE};
-    List<LogExpEnum> strList = Arrays.asList(str);
-    List<LogExpEnum> numList = Arrays.asList(num);
-    List<LogExpEnum> dateList = Arrays.asList(date);
-    public boolean compare(Field  field, String value, LogExpEnum operation) {
-        if (strList.contains(operation))
-            return logExp(operation).compare(field, value);
-        return false;
-    }
-    public boolean compare(Field  field, Integer value, LogExpEnum operation) {
-        if (numList.contains(operation))
-            return logExp(operation).compare(field, String.valueOf(value));
-        return false;
-    }
-    public boolean compare(Field  field, Date value, LogExpEnum operation) {
-        if (dateList.contains(operation))
-            return logExp(operation).compare(field, String.valueOf(value));
-        return false;
-    }
-
     public ILogExp logExp(LogExpEnum operation) {
         switch (operation) {
             case EQ -> { return expEQ; }

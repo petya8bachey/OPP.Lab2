@@ -1,5 +1,9 @@
 package field;
 
+import filter.FilterRule;
+import log.LogExpEnum;
+import rule.str.RegionRule;
+
 public class RegionField implements Field {
     String region;
     public RegionField(String region) {
@@ -11,8 +15,8 @@ public class RegionField implements Field {
     }
 
     @Override
-    public void createRule() {
-
+    public FilterRule createRule(Object value, LogExpEnum operation) {
+        return new RegionRule((String) value, operation);
     }
 
     @Override

@@ -1,5 +1,10 @@
 package field;
 
+import filter.FilterRule;
+import log.LogExpEnum;
+import rule.date.DateFieldExpr;
+import rule.num.ContCountRule;
+
 public class CountContField implements Field {
     Integer count;
     public CountContField(int count) {
@@ -11,8 +16,8 @@ public class CountContField implements Field {
     }
 
     @Override
-    public void createRule() {
-
+    public FilterRule createRule(Object value, LogExpEnum operation) {
+        return new ContCountRule((Integer) value, operation);
     }
 
     @Override

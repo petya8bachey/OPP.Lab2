@@ -1,5 +1,9 @@
 package field;
 
+import filter.FilterRule;
+import log.LogExpEnum;
+import rule.str.WebRule;
+
 public class WedField implements Field {
     String url;
     public WedField(String url) {
@@ -11,8 +15,8 @@ public class WedField implements Field {
     }
 
     @Override
-    public void createRule() {
-
+    public FilterRule createRule(Object value, LogExpEnum operation) {
+        return new WebRule((String) value, operation);
     }
 
     @Override

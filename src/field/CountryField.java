@@ -1,5 +1,9 @@
 package field;
 
+import filter.FilterRule;
+import log.LogExpEnum;
+import rule.str.CountryRule;
+
 public class CountryField implements Field {
     String country;
     public CountryField(String country) {
@@ -11,10 +15,9 @@ public class CountryField implements Field {
     }
 
     @Override
-    public void createRule() {
-
+    public FilterRule createRule(Object value, LogExpEnum operation) {
+        return new CountryRule((String) value, operation);
     }
-
     @Override
     public Field clone() {
         return new CountryField(country);

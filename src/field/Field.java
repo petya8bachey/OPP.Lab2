@@ -1,7 +1,10 @@
 package field;
 
+import filter.FilterRule;
+import log.LogExpEnum;
+
 public interface Field {
     String getValue();
-    void createRule();
+    FilterRule createRule(Object value, LogExpEnum operation);
     Field clone();
 }
