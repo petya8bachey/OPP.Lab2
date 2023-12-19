@@ -1,21 +1,21 @@
 package firm;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.ArrayList;
-
+@Setter @Getter
 public class FirmMngr {
-    private static final class InstanceHolder {
-        public static final FirmMngr INSTANCE = new FirmMngr();
-    }
-
-    public static FirmMngr getInstance() {
-        return FirmMngr.InstanceHolder.INSTANCE;
-    }
     ArrayList<FirmVw> firmVwList = new ArrayList<>();
     ArrayList<Firm> firmList = new ArrayList<>();
-    public void add(Firm firm) {
+    public Firm newFirm() {
+        Firm firm = new Firm();
         firmList.add(firm);
+        return firm;
     }
-    public void add(FirmVw firmVw) {
+    public FirmVw newFirmVw() {
+        FirmVw firmVw = new FirmVw();
         firmVwList.add(firmVw);
+        return firmVw;
     }
 }

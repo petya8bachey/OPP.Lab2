@@ -1,6 +1,6 @@
 package field;
 
-import filter.FilterRule;
+import rule.FilterRule;
 import log.LogExpEnum;
 import rule.str.WebRule;
 

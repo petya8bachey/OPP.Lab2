@@ -1,6 +1,6 @@
 package rule.str;
 
-import filter.FilterRule;
+import rule.FilterRule;
 import log.LogExpEnum;
 
 public class CountryRule extends FilterRule {

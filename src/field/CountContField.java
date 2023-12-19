@@ -1,8 +1,7 @@
 package field;
 
-import filter.FilterRule;
+import rule.FilterRule;
 import log.LogExpEnum;
-import rule.date.DateFieldExpr;
 import rule.num.ContCountRule;
 
 public class CountContField implements Field {

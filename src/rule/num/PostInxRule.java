@@ -1,6 +1,6 @@
 package rule.num;
 
-import filter.FilterRule;
+import rule.FilterRule;
 import log.LogExpEnum;
 
 public class PostInxRule extends FilterRule {
